@@ -1,0 +1,99 @@
+/**
+ * CSS for the CS142 Project 4, Problem 2 States component.
+ * 
+ * Since CSS uses a global name space for classes we should use names starting
+ * with "cs142-states-" here.
+ */
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 容器样式 */
+.state-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 输入框样式 */
+.state-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.state-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* 输入预览区 */
+.input-preview {
+    color: #666;
+    padding: 10px 16px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    border-left: 3px solid #4a90e2;
+}
+
+/* 状态列表容器 */
+.states-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+/* 单个状态项样式 */
+.state-item {
+    padding: 10px 16px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+    color: #2d3748;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.state-item:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* 滚动提示样式 */
+.scroll-indicator {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 1rem 0;
+    letter-spacing: 0.5px;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.state-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* 为不同位置的元素设置动画延迟，创造层次感 */
+.state-item:nth-child(2n) { animation-delay: 0.05s; }
+.state-item:nth-child(3n) { animation-delay: 0.1s; }
+.state-item:nth-child(4n) { animation-delay: 0.15s; }

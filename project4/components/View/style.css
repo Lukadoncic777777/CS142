@@ -1,0 +1,26 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* 固定高度 */
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* 关键：给页面主内容添加顶部间距 */
+.main-content {
+    margin-top: 60px; /* 与Header高度一致 */
+    padding: 20px; /* 可选：添加内边距让内容更舒适 */
+}
+
+/* 如果使用了导航栏高度动态变化（如滚动时变高） */
+.header.scrolled {
+    height: 70px; /* 滚动时高度变化 */
+}
+
+/* 配合动态高度的内容区（需要JS配合） */
+.main-content.dynamic {
+    transition: margin-top 0.3s ease; /* 平滑过渡 */
+}
